@@ -1,0 +1,10 @@
+class projects hosted online:
+
+dynamicly generated blog
+https://web.engr.oregonstate.edu/~fanninme/webdevFinal_Blog/Splash.html
+
+Databases final: relational database of employees 'linkedin' style website
+https://web.engr.oregonstate.edu/~fanninme/Databases/Final/General.HTML
+
+How to Guide for the Pinterest API and SDK
+https://web.engr.oregonstate.edu/~fanninme/PinAPI/pinterestHowTo.html
