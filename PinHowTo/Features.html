@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Setting Up Your WebSite</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="body">
+<div class="tableOfContents">
+    <h3> Table of Contents</h3>
+    <ul>
+        <li> <a href ="pinterestHowTo.html"> What is Pinterest? </a> </li>
+        <li> <a href ="pinterestHowTo.html#gettingStarted"> Getting Started </a> </li>
+        <li> <a href="SDKvsAPI.html">API vs SDK</a> </li>
+        <li> <a href="SettingUpYourApp.html"> Setting Up your App</a> </li>
+        <li> <a href="Authorization.html">Authorization </a> </li>
+        <li> <a href="API_requests.html">API</a> </li>
+        <li> <a href="JavaScript_SDK.html"> Javascript SDK</a> </li>
+        <li> <a href ="Features.html"> Pin It and Javascript details </a></li>
+        <li> <a href ="Widgets.html"> Widget Maker </a></li>
+        <li> <a href ="References.html"> References </a> </li>
+    </ul>
+</div>
+<h2>Features and Add ons</h2>
+<div>
+    <a name="features"> <h2 style="color:#bd081c;">Setting Up Your Website</h2> </a>
+
+    <h3> <a name="pinIt">Pin It Button:</a></h3>
+    <p>
+        <ul>
+            Some general tips on making pins:<br>
+            <li>Pins should come from source images that are at least 750 pixels wide for best results. (The images don't have to appear that big on your page. They just have to be that size in the media URL used.)</li>
+            <li>You can choose to a make a general “pin anything” button or a pin it button specific to that image.</li>
+            <li>The image specific button can also show up when the user hovers their mouse over the image if you use set the hover field to true (data-pin-hover="true" ). Hover pins are turned on in this page!</li>
+            <li>Make sure you have concise and clever description for your pin (it helps search-ability and the user)</li>
+        </ul>
+        <br>
+    </p>
+
+    <!--PICTURES-->
+    The Image of the cat is too small but picture of the land scape is large enough to be optimal.
+    <a href="https://www.flickr.com/photos/9966270@N02/17825533442" title="frisco by Megan, on Flickr">
+        <img src="https://c2.staticflickr.com/6/5452/17825533442_662f0ba355_s.jpg" width="75" height="75" alt="frisco"></a>
+    <a href="https://www.flickr.com/photos/9966270@N02/8404142062" title="The View by Megan, on Flickr">
+        <img src="https://c1.staticflickr.com/9/8227/8404142062_19417c7a6a_c.jpg" width="800" height="535" alt="The View"></a>
+    <br>
+    <p>
+        To add a pin it button there are several methods the widget builder discussed above, or you can make paste the
+        JavaScript provided by either the widget maker or the tutorial <a href="https://developers.pinterest.com/pin_it/">here</a>
+        or you can make a AJAX call which which will load asynchronously.
+    </p>
+    <p>
+        If you choose JavaScript remember to include
+        <div class="code">
+            [script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"][/script]
+        </div><br>
+        at the end of the body of your html. JavaScript tags can block rendering of the rest of the page if the network
+        pauses so it's important to include the SCRIPT tag at the bottom of the html body rather than the header or inside
+        a repeated template.
+        <br>
+        When creating a pin in JavaScript use <a href="https://www.pinterest.com/pin/create/button/">www.pinterest.com/pin/create/button/</a>
+        the one that appears when you use the bookmarklet is different, and using the wrong one can affect analytics reporting.
+    </p>
+
+</div>
+
+<div>
+    <h3><a name="async">Asynchronous loading</a></h3>
+    <p>
+        If you are worried about the performance it makes sense to choose to have pin asynchronously load. That way if a
+        pin hasn't fully loaded the whole page won't be waiting on the pin to load but rather it can load “in the background”
+        while other parts of the page display.
+
+        If you'd like to load the JavaScript asynchronously, you can do so by copying and pasting this snippet anywhere
+        on your page:
+    </p>
+    <div class="code">
+        [script type="text/javascript"]<br>
+        &nbsp;(function(d){<br>
+        &nbsp;&nbsp; var f = d.getElementsByTagName('SCRIPT')[0], p = d.createElement('SCRIPT');<br>
+        &nbsp;&nbsp; p.type = 'text/javascript';<br>
+        &nbsp;&nbsp; p.async = true;<br>
+        &nbsp;&nbsp; p.src = '//assets.pinterest.com/js/pinit.js';<br>
+        &nbsp;&nbsp; f.parentNode.insertBefore(p, f);<br>
+        &nbsp; }(document));<br>
+        [/script]
+    </div>
+        <br>
+    <a>
+        (see <a href="https://developers.pinterest.com/pin_it/ ">developers.pinterest.com</a> for the most up to date code
+        or <a href="https://github.com/pinterest/widgets">github.com/pinterest/widgets</a>.This function can be added once
+        and it will work for the entire page (no need to add multiple copies if you have more than one pin object).
+    </p>
+</div>
+    <br>
+    <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"
+        data-pin-hover="true">
+    </script>
+</body>
+    <footer>
+        <FORM METHOD="LINK" ACTION="JavaScript_SDK.html" style="float:left">
+        <INPUT TYPE="submit" VALUE="Back">
+        </FORM>
+
+        <FORM METHOD="LINK" ACTION="Widgets.html" style="float:right">
+            <INPUT TYPE="submit" VALUE="Next">
+        </FORM>
+    </footer>
+</html>

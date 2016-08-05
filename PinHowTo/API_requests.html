@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>API Requests </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="body">
+<div class="tableOfContents">
+    <h3> Table of Contents</h3>
+    <ul>
+        <li> <a href ="pinterestHowTo.html"> What is Pinterest? </a> </li>
+        <li> <a href ="pinterestHowTo.html#gettingStarted"> Getting Started </a> </li>
+        <li> <a href="SDKvsAPI.html">API vs SDK</a> </li>
+        <li> <a href="SettingUpYourApp.html"> Setting Up your App</a> </li>
+        <li> <a href="Authorization.html">Authorization </a> </li>
+        <li> <a href="API_requests.html">API</a> </li>
+        <li> <a href="JavaScript_SDK.html"> Javascript SDK</a> </li>
+        <li> <a href ="Features.html"> Pin It and Javascript details </a></li>
+        <li> <a href ="Widgets.html"> Widget Maker </a></li>
+        <li> <a href ="References.html"> References </a> </li>
+    </ul>
+</div>
+
+    <h1>Pinterest API Endpoints</h1>
+    <div class="body">
+        Pinterest uses a restful API.  A restful API is a API which returns internet media in response to queries,
+        typically JSON strings (which are human and machine readable), and uses standard HTTP methods to request and
+        alter the data (in this case GET).You make a request to a URL, just like going to a site in a web browser,
+        but instead of returning HTML, it returns JSON.
+
+        This is an example of what a API request might look like is
+    <div class="code" >
+        https://api.pinterest.com/v3/domains/<domain>/pins/top/clicks/ <br>
+        to make a request with a access token you need to send a request like this<br>
+        https://api.pinterest.com/v3/users/myUserName/?access_token=APIKEY<br>
+    </div>
+        <p>
+            To see what a response might look like look at
+            <a href="https://developers.pinterest.com/sample_responses/pins/">this</a>.<br>
+            All calls have a limited return of 1,000 pins unless otherwise specified. When querying the server for information
+            you can choose a period of time to look at that data for, in Pinterest the options are daily, weekly, or bi-weekly.
+            This is called the aggregation value which must be provided in a string can be one of the following values:biweekly,
+            daily, monthly, or weekly. The end_date is the parameter which sets the end point for aggregation. The end date
+            should be provided in A date string in the format YYYY-mm-dd.<br>
+            You can explore the API using their <a href="">Explorer Tool</a> <br>
+            <br>
+            <h3>For information about specific API calls</h3>
+            <a href="https://developers.pinterest.com/docs/api/users/">Users</a><br>
+            <a href="https://developers.pinterest.com/docs/api/boards/">Boards</a><br>
+            <a href="https://developers.pinterest.com/docs/api/pins/">Pins</a><br>
+        </p>
+    </div>
+
+</body>
+<footer>
+    <FORM METHOD="LINK" ACTION="Authorization.html" style="float:left">
+        <INPUT TYPE="submit" VALUE="Back">
+    </FORM>
+
+    <FORM METHOD="LINK" ACTION="JavaScript_SDK.html" style="float:right">
+        <INPUT TYPE="submit" VALUE="Next">
+    </FORM>
+</footer>
+</html>

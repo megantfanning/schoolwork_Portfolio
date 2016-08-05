@@ -1,0 +1,57 @@
+
+.breakOutBox {
+    background-color:black;
+    color:white;
+    margin:20px;
+    padding:20px;
+}
+
+.tableOfContents{
+    background-color:lightgray;
+    margin:15px;
+    padding:15px;
+    float:left;
+}
+
+.header{
+    background-color:white;
+    color:#bd081c;
+    margin:20px;
+    padding:20px;
+
+    font-family: Pacifico;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26px;
+
+    text-align:center;
+    text-shadow: 2px 2px #151515;
+}
+
+.code{
+    background-color:lightsteelblue;
+    padding:3px;
+    margin: 3px;
+    text-align: left;
+}
+
+.span{
+    color: #000000;
+    font-family: 'Liberation Serif', serif;
+    font-size: medium;
+}
+
+.body{
+    padding: 5px;
+    margin: 7px;
+    background-color: whitesmoke;
+}
+
+.ref{
+    display: inline-block;
+    background-color: lemonchiffon;
+    padding: 3px;
+    margin: 7px;
+}

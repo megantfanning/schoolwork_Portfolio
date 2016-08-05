@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JavaScript SDK</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="body">
+<div class="tableOfContents">
+    <h3> Table of Contents</h3>
+    <ul>
+        <li> <a href ="pinterestHowTo.html"> What is Pinterest? </a> </li>
+        <li> <a href ="#gettingStarted"> Getting Started </a> </li>
+        <li> <a href="SDKvsAPI.html">API vs JDK</a> </li>
+        <li> <a href="SettingUpYourApp.html"> Setting Up your App</a> </li>
+        <li> <a href="Authorization.html">Authorization </a> </li>
+        <li> <a href="API_requests.html">API</a> </li>
+        <li> <a href="JavaScript_SDK.html"> Javascript SDK</a> </li>
+        <li> <a href ="Features.html"> Pin It and Javascript details </a></li>
+        <li> <a href ="Widgets.html"> Widget Maker </a></li>
+        <li> <a href ="References.html"> References </a> </li>
+    </ul>
+</div>
+<p>
+    The Pinterest API is leverage by the Pinterest SDK.
+    There are two categories of methods in the SDK, authentication and users, boards, and Pins.<br>
+    Authentication handles logging in a out and of each session as well as getting and setting sessions.
+    Users boards and pins are requested using the .me (users), .pin(does the pinning action)
+    <br>
+    You can use PDK.request for all API endpoints not covered by other convenience methods. See the above list of links for users,
+     boards and Pins for a list of all available endpoints.
+    All PDK.request calls require an authenticated user
+    <br>
+    The SDK will let you know if there is more information by giving a hasNext response. Use the response.next() helper function
+    to fetch the next page of results.
+</p>
+
+<div class="code">
+    var pins = [];<br>
+    PDK.request('/boards/<board_id>/pins/', function (response) { // Make sure to change the board_id <br>
+    if (!response || response.error) {<br>
+    alert('Error occurred');<br>
+    } else {<br>
+    pins = pins.concat(response.data);<br>
+    if (response.hasNext) {<br>
+    response.next(); // this will recursively go to this same callback<br>
+    }
+    }
+    });
+</div>
+For more information on specific calls see the <a href="https://developers.pinterest.com/docs/sdks/js/">Pinterest documentation</a>
+</body>
+</html>

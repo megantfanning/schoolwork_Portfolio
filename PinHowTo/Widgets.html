@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Widgets</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="body">
+<div class="tableOfContents">
+    <h3> Table of Contents</h3>
+    <ul>
+        <li> <a href ="pinterestHowTo.html"> What is Pinterest? </a> </li>
+        <li> <a href ="pinterestHowTo.html#gettingStarted"> Getting Started </a> </li>
+        <li> <a href="SDKvsAPI.html">API vs SDK</a> </li>
+        <li> <a href="SettingUpYourApp.html"> Setting Up your App</a> </li>
+        <li> <a href="Authorization.html">Authorization </a> </li>
+        <li> <a href="API_requests.html">API</a> </li>
+        <li> <a href="JavaScript_SDK.html"> Javascript SDK</a> </li>
+        <li> <a href ="Features.html"> Pin It and Javascript details </a></li>
+        <li> <a href ="Widgets.html"> Widget Maker </a></li>
+        <li> <a href ="References.html"> References </a> </li>
+    </ul>
+</div>
+
+<div>
+    <a name="widgets"> <h2 style="color:#bd081c;">Widget Maker</h2> </a>
+    Widget builder (https://business.pinterest.com/en/widget-builder#do_pin_it_button) may be the most important tool in
+    your toolkit for making your web page Pinterest friendly.<br>
+    The widget Builder provides a snippet of HTML and JavaScript code which you can paste directly into your website.
+    The widget builder will make: the pin it button, the follow me on Pinterest button, a pin widget, a board widget and
+    a profile widget.<br>
+    The widget builder generates some code that looks like this (Example of a embedded Pinterest board)
+    <br>(note: square brackets are shown here for demonstration purposes, in your website angled brackets will be used)
+    <div class="code">
+        <ol>
+            &nbsp;&nbsp; <li>[a data-pin-do="embedBoard" href="https://www.pinterest.com/Mzlovely88/new-orleans/"data-pin-scale-width="80"data-pin-scale-height="200" data-pin-board-width="400"]</li>
+            &nbsp;&nbsp; <li> Follow New Orleans on Pinterest.[/a]</li>
+            &nbsp;&nbsp; <li> [!-- Please call pinit.js only once per page --]</li>
+            &nbsp;&nbsp; <li> [script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"][/script]</li>
+        </ol>
+    </div>
+
+    Let's break down the first three lines of code (which is one function call).<br>
+    It calls a function ([a data-pin-do="embedBoard" data-pin-do) using the assets made available from line 4.<br>
+    Next it calls the board that will be displayed (href="https://www.pinterest.com/userName/board-name/).<br>
+    The final section of the first line of code sets the size of the widget (data-pin-scale-width="80"data-pin-scale-height="200" data-pin-board-width="400").<br>
+    Line three displays the alt text.<br>
+    Line 4 and 5 tell you to call the Pinterest assets once per a page. If you will be displaying multiple boards or pin
+    objects you can add this last line to the bottom of your HTML code (just before the closing body tag) and then delete it from all subsequently generated widgets.
+    Another way to generate a widget is once you've created a board you can generate embedded board for your website by
+    going to the top right hand side of the board and clicking the button with three dots and selecting “make a widget”
+    this will provide you with a snippet of JavaScript which can be pasted into a web page.
+</div>
+<div>
+    <a name="widgetTypes"> <h2 style="color:#bd081c;">Types of Widgets and Pin Makers</h2> </a>
+        <p>
+            The widget maker makes: Board Widgets, Profile widget, pin widget, pin it button and follow button. Each of
+            these have different potential uses.
+            The board widget is best suited to displaying a board that is themed around your article, recipe or idea.
+            The profile widget is a good fit for allowing people to easily follow your brand, alternatively the follow
+            button is also well suited to this purpose. The Pin widget is good for when you want people to save your specific
+            image as a pin for example a product or key graphic. The pin it button is the Swiss army knife of these options,
+            it's great because it's very versatile you can create pin it buttons for : your entire web page, that show how
+            many people have saved this pin, that hover over images, that save one specific image etc.
+            <br>
+            <!--PIN IT BUTTON FOR ANYTHING ON PAGE-->
+            <a href="//www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"  data-pin-color="red" data-pin-height="28">
+                <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png" /></a>
+            This button will pin any image on this website
+            <br>
+
+            <!--PICTURES-->
+            <a href="https://www.flickr.com/photos/9966270@N02/8615846472" title="cherry blossom by Megan, on Flickr">
+                <img src="https://c1.staticflickr.com/9/8109/8615846472_c7b2d8cbe4_n.jpg" width="320" height="214" alt="cherry blossom"></a>
+
+            <a href="https://www.flickr.com/photos/9966270@N02/8403052279" title="dewdrops on roses by Megan, on Flickr">
+                <img src="https://c1.staticflickr.com/9/8330/8403052279_46b84b958c_n.jpg" width="320" height="214" alt="dewdrops on roses"></a>
+
+            <a href="https://www.flickr.com/photos/9966270@N02/8404145982" title="Fluffy by Megan, on Flickr">
+                <img src="https://c1.staticflickr.com/9/8219/8404145982_2448e688e9_n.jpg" width="320" height="214" alt="Fluffy"></a>
+            <br>
+
+            <!-- Rose PIN IT BUTTON-->
+            This button will pin only the picture of the roses, not any of the other images.
+            <a href="//www.pinterest.com/pin/create/button/?url=https%3A%2F%2Fwww.flickr.com%2Fphotos%2F9966270%40N02%2F8403052279&media=https%3A%2F%2Fc1.staticflickr.com%2F9%2F8330%2F8403052279_46b84b958c_n.jpg&description=Roses%20are%20Red" data-pin-do="buttonPin" data-pin-config="beside" data-pin-color="red" data-pin-height="28">
+                <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_28.png" /></a>
+            <br>
+            A few notes on the hover pin it button. A few kinds of images won't work with the hover pin it button.
+            Specifically CSS background images, images that are under 80 by 80 pixels in size, and images whose src attribute
+            starts with data: won't show hover buttons. If you don't want images to have a hover pin it you can set
+            the data-pin-no-hover="true" attribute set, or the nopin="nopin" attribute.
+            To disable the hover over pin it button for the whole website use the meta tag no hover in the header of the website.
+        </p>
+    Like so
+    <div class="code" >
+        [meta name="pinterest" content="nohover"][/meta]<br>
+        OR<br>
+        [meta name="pinterest" content="nopin"][/meta]
+    </div>
+    <br>
+    Pinning will still be possible, but the browser extension will not show hover buttons.
+    <br>
+</div>
+
+</body>
+    <footer>
+        <FORM METHOD="LINK" ACTION="Features.html" style="float:left">
+            <INPUT TYPE="submit" VALUE="Back">
+        </FORM>
+
+        <FORM METHOD="LINK" ACTION="References.html" style="float:right">
+            <INPUT TYPE="submit" VALUE="Next">
+        </FORM>
+    </footer>
+</html>

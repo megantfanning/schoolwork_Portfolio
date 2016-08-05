@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Authorization Pinterest</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="body">
+<div class="tableOfContents">
+    <h3> Table of Contents</h3>
+    <ul>
+        <li> <a href ="pinterestHowTo.html"> What is Pinterest? </a> </li>
+        <li> <a href ="pinterestHowTo.html#gettingStarted"> Getting Started </a> </li>
+        <li> <a href="SDKvsAPI.html">API vs SDK</a> </li>
+        <li> <a href="SettingUpYourApp.html"> Setting Up your App</a> </li>
+        <li> <a href="Authorization.html">Authorization </a> </li>
+        <li> <a href="API_requests.html">API</a> </li>
+        <li> <a href="JavaScript_SDK.html"> Javascript SDK</a> </li>
+        <li> <a href ="Features.html"> Pin It and Javascript details </a></li>
+        <li> <a href ="Widgets.html"> Widget Maker </a></li>
+        <li> <a href ="References.html"> References </a> </li>
+    </ul>
+</div>
+
+    <div>
+    <h2>Authorization</h2>
+    <p>
+        Pinterest is a RESTful API uses <a href="http://oauth.net/2/">OAuth 2.0</a> for authentication.
+        The Pinterest API uses OAUTH and allows both read and write permissions when interacting with a user's content.
+        The process of gaining authorization to act of a users behalf is several steps. First we request permission from the user,
+        then we receive an authorization code which we can exchange for a token to make changes.
+        <br>
+        You’ll make requests using your app ID and app secret. These let us know that it’s actually you making the request.
+        Since your app secret gives you access to your users' profiles, boards and Pins, treat it with care and don't share it publicly.
+        All requests must be made over https. We will not redirect your requests from http to https.
+
+
+    </p>
+    <h3> Authorization with API</h3>
+    <p>
+        Create a <a href="https://developers.pinterest.com/tools/access_token/">access token</a>
+        If you have problems with your token Pinterest has a <a href="https://developers.pinterest.com/tools/token-debugger/">token debugger tool</a>
+        After you get your access code, you can request an access token. Make a POST request to https://api.pinterest.com/v1/oauth/token with the following parameters.<br>
+        grant_type	Must take the value authorization_code.<br>
+        <b>client_id</b> : Your app ID. You can get this ID from your app page.<br>
+        <b>client_secret</b> : Your app secret. You can get this from your app page.<br>
+        <b>code</b> : The access code you received from your redirect URI.<br>
+    </p>
+    <h3> Authorization with Javascript SDK</h3>
+    <p>
+        When setting up your SDK you’ll need to add redirect URIs to use the SDK.
+        You can add redirect URIs in the Platform: Web section of your app page. Remember that OAuth only accepts https connections.
+        Redirects are used as fallbacks if a browser doesn't support the postMessage API.
+        You will use the authentication methods to log users into your program (.login, .logout,.getsession,.setsession).
+    </p>
+    </div>
+    Here's a drawing that summerizes the concept of authentication
+    <img src="Cert.jpg"  style="width:700px;height:700px;">
+    </body>
+<footer>
+    <FORM METHOD="LINK" ACTION="SettingUpYourApp.html" style="float:left">
+        <INPUT TYPE="submit" VALUE="Back">
+    </FORM>
+
+    <FORM METHOD="LINK" ACTION="API_requests.html" style="float:right">
+        <INPUT TYPE="submit" VALUE="Next">
+    </FORM>
+</footer>
+</html>

@@ -1,0 +1,118 @@
+<html>
+    <header class="header">
+        <meta charset="utf-8">
+        <title>A Beginners Guide to the Pinterest API</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </header>
+    <body class="body">
+    <div class="tableOfContents">
+        <h3> Table of Contents</h3>
+        <ul>
+            <li> <a href ="#whatsPin"> What is Pinterest? </a> </li>
+            <li> <a href ="#gettingStarted"> Getting Started </a> </li>
+            <li> <a href="SDKvsAPI.html">API vs SDK</a> </li>
+            <li> <a href="SettingUpYourApp.html"> Setting Up your App</a> </li>
+            <li> <a href="Authorization.html">Authorization </a> </li>
+            <li> <a href="API_requests.html">API</a> </li>
+            <li> <a href="JavaScript_SDK.html"> Javascript SDK</a> </li>
+            <li> <a href ="Features.html"> Pin It and Javascript details </a></li>
+            <li> <a href ="Widgets.html"> Widget Maker </a></li>
+            <li> <a href ="References.html"> References </a> </li>
+        </ul>
+    </div>
+
+    <a name="whatsPin"> <h2 style="color:#bd081c;"> What is Pinterest?</h2> </a>
+        <div class="body">
+            Pinterest is a visual bookmarking website. The end user saves images they like from websites onto a “board”,
+            much like an actual cork board. The user can add and remove new things and create themed bookmark boards. This
+            makes Pinterest a great place to showcase art, recipes, and products.
+            The Pinterest API is a set of developer tools which allow your website to interface with Pinterest. This
+            tutorial will teach you how to create rich tags, a "pin it" tag and get feedback on what users are pinning.
+            This guide won't cover the Android or IOS SDK for Pinterest.
+            <br>
+            <a data-pin-do="embedBoard" href="https://www.pinterest.com/Mzlovely88/blue-color-palettes/"data-pin-scale-width="80" data-pin-scale-height="200" data-pin-board-width="400">Blue Board</a>
+
+            <a data-pin-do="embedBoard" href="https://www.pinterest.com/Mzlovely88/new-orleans/"data-pin-scale-width="80" data-pin-scale-height="200" data-pin-board-width="400">
+            Follow New Orleans on Pinterest.</a>
+            <div style="float:right"> This is an example of what a pinterest board looks like!</div>
+        </div>
+
+        <div class="body">
+        <a name="gettingStarted">
+            <h3 style="color:#bd081c;"> Getting Started:</h3>
+            <a name="__DdeLink__218_81911866"></a> <i>1) Sign up &amp; create a profile</i></a><br><br>
+
+                Signing up for Pinterest is simple as going to Pinterest.com and clicking create account.
+
+                A few things to keep in mind
+                <ul>
+                    <li><span>The profile picture is a 600x600 px image so logos should be scaled for that size to avoid stretching.</span></li>
+                    <li><span>Is this a personal, professional or business account?</span></li>
+                </ul>
+                You'll be able to create a account by either linking your Facebook, Twitter or email account with Pinterest. If it's professional make sure to link it with your business email or Facebook page.
+                <ul>
+                    <li><span>Adjust email settings as appropriate for your account </span></li>
+                </ul>
+                <p>To adjust your settings click the drop-down menu in the upper right-hand corner with your user icon and
+                    click Settings. Here you can update basic information, opt out of email notifications, and connect or
+                    disconnect your Facebook or Twitter account.</p>
+
+            <i>2) Navigating Pinterest</i>
+                <p>
+                    Your home page in Pinterest is your news feed. To refresh your news feed click the symbol with two
+                    pins on the top left corner. Next to that there is a bar which displays your picture and user name.
+                    On the bottom right is a + symbol which lets you add pins and a ? symbol below that is the help center.
+                    The search bar is on the top left.
+                    Click on the Pinterest symbol to navigate to your home page (pin feed). The symbol with three lines
+                    to the right of the search bar drops down and provides the list of categories for general searches.
+                </p>
+            <i>3) Creating a Pinterest board</i>
+                <p>
+                    You need to build boards in order to collect and organize items you're interested in.
+                    Open Your Boards in the upper right-hand drop-down menu, then click Create a Board. A box will pop
+                    up asking you to name your board, add a description, and categorize it. Pinterest has the default
+                    themes (see below) which are a good place to start for ideas. Choose a name which is clear but
+                    specific enough to show up in a search, for example : Coral and Mint Color Scheme, North American
+                    Travel Ideas, or Summer Outfits for Tall Women. All of these will show up in a search for a general
+                    topic (color schemes, travel, outfits) but will be specific enough to be useful.
+                </p>
+                <div class="breakOutBox">
+                    <h3>Default Pinterest Themes:</h3>
+                    Popular, Everything, Gifts, Videos, Animals and Pets, Architecture, Art, Cars and Motorcyles, Celebrities, Design, DIY and Crafts, Education, Film, Music and Books, Food and Drink, Gardening, Geek, Hair and Beauty, Health and Fitness, History, Holidays and Events, Home Decor, Humor, Illustrations and Posters, Kids and Parenting, Men's Fashion, Outdoors, Photography, Products, Quotes, Science and Nature, Sports, Tattoos, Technology, Travel, Weddings, and  Women's Fashion.
+                </div>
+
+                <i>4) Edit and Customize your Pinterest Boards </i>
+                    <p>
+                        By clicking Edit Board you can invite others to pin to your board, but you need to either follow the
+                        user or enter their associated email address to do so. This is a good option if you have multiple friends
+                        or team members adding to a board.
+                        Besides the default Pinterest board there are a few options in customizing your board further. With
+                        a secret board whatever you pin to this board is only visible to you (and those you invite to it).
+                        This is good when you aren't quite finished creating your final board or don't want your friends
+                        seeing your embarrassingly large collection of cute cat photos. You can also create a Board with a
+                        map with locations (great for planning vacations).
+                    </p>
+                <i>5) Upload pins</i>
+                    <p>
+                        To add a pin click on the + symbol on the bottom right. You have two options to add a pin, either
+                        provide the url of the website with the image you want to save. Alternatively you can upload your own
+                        image. Once you've chosen you image you then choose which board to add this pin to.
+                    </p>
+
+                <i>6) Follow Other Boards and Users</i>
+                    <p>
+                        You can follow other users Pinterest boards by opening their board and clicking on the follow button
+                        on the upper right hand corner. To follow a user, click on their profile and then follow on the upper
+                        right hand corner. Once you have followed a user or their board the content added to that board will
+                        appear in your news feed.
+                    </p>
+        </div>
+        <br>
+        <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
+    </body>
+    <footer>
+        <FORM METHOD="LINK" ACTION="Widgets.html">
+        <INPUT TYPE="submit" VALUE="Next Page">
+        </FORM>
+    </footer>
+</html>

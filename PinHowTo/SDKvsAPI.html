@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SDK vs API</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="body">
+<div class="tableOfContents">
+    <h3> Table of Contents</h3>
+    <ul>
+        <li> <a href ="pinterestHowTo.html"> What is Pinterest? </a> </li>
+        <li> <a href ="#gettingStarted"> Getting Started </a> </li>
+        <li> <a href="SDKvsAPI.html">API vs JDK</a> </li>
+        <li> <a href="SettingUpYourApp.html"> Setting Up your App</a> </li>
+        <li> <a href="Authorization.html">Authorization </a> </li>
+        <li> <a href="API_requests.html">API</a> </li>
+        <li> <a href="JavaScript_SDK.html"> Javascript SDK</a> </li>
+        <li> <a href ="Features.html"> Pin It and Javascript details </a></li>
+        <li> <a href ="Widgets.html"> Widget Maker </a></li>
+        <li> <a href ="References.html"> References </a> </li>
+    </ul>
+</div>
+
+<h2> SDK VS API</h2>
+<div>
+    You may wonder what to use when making a web application the Pinterest API or the SDK.
+    First consider the differences between an API (Application Program Interface) and a SDK( Software Development Kit)
+    An API is a set of standards for accessing information.<br>
+    an SDK is implementation tooling, it provides a set of tool (methods) for accessing information and manipulating data.<br>
+    In the case of pinterest because you can leverage the API from the SDK tools there's no real disadvantages to choosing the SDK over the API.
+
+</div>
+<table border="1">
+    <tr>
+        <td>Feature</td> <td>API</td> <td>SDK</td>
+    </tr>
+    <tr>
+        <td>Access method</td><td>Endpoints (users, boards, and Pins)</td><td>Methods (including one which allows you to utilize the endpoints API)</td>
+    </tr>
+    <tr>
+        <td>Querys (both allow 1000 calls per endpoint per hour for each unique user token.)</td><td>Every API response returns a header that gives you an update about rate limiting.</td><td>The SDK will let you know if there is more information by giving a hasNext response.</td>
+    </tr>
+    <tr>
+        <td>Authentication (Both use Oauth 2.0)</td><td>Requires getting an access code and then an access token uses permission scopes.</td><td>Has a authentication method which allows you to set authorization for a session.</td>
+    </tr>
+</table>
+
+<h3> Pinterest's Business Analytics Tool</h3>
+<p>
+    Another thing to consider is <a href="https://analytics.pinterest.com/">Business Analytics page</a>
+    which is a seperate tool set which focuses on leveraging users clicks and follows to determine how successful your page or product is.
+    This tool is better for the business focus because it provides nice charts and is aimed at non-technical people.
+    There is a focus on 'click conversion' and lots of data about who, where, when and what in terms of how your businesses items are being accessed and saved.
+    If you are only using the API or SDK for information users activities you might consider this tool instead.<br>
+    <img src="Analytics.png" style="width:600px;height:400px; padding: 5px">
+    <img src="BusinessAnalytics.png" style="width:600px;height:400px;">
+</p>
+</body>
+</html>
